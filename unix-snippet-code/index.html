@@ -1,2 +1,5 @@
 <h2><strong>Find a string into files</strong></h2>
 <pre><em><code>grep -Ril "text-to-find-here" /</code></em></pre>
+
+<h2><strong>Find a string into zip files</strong></h2>
+<pre><em><code>for file in path/file.zip; do unzip -c "$file" | grep "Ì"; done/</code></em></pre>
