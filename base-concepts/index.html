@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+</head>
+<body>
+
+<h2>Overloading vs Overriding</h2>
+    <img src="/img/OverridingVsOverloading.png">
+
+<h2>Single-dispatch vs Double-dispatch</h2>
+
+<b>Single-dispatch</b>
+
+    <img src="/img/UDUO4.gif">
+
+Assume Node is an interface class and the two sub classes are concrete implementations of the interface.
+
+If you call GenerateCode() method on a node instance, the actual operation getting executed depends on the type of the node. It could be the method either in VariableRefNode or AssignmentNode. It's the same if you call PrettyPrint(). So the actual operation getting executed depends on name of the method you are calling and the type of the node.
+
+<b>Double-dispatch</b>
+    <img src="/img/EixXP.gif">
+
+Nodes Visitors
+
+This time the Node is allowing you to pass a parameter of type NodeVisitor to its method called Accept. In your program if you call Accept on a node instance, the actual operation getting executed now depends on the type of the node (VariableRefNode or AssignmentNode) AND the type of the visitor instance you passed into Accept (TypeCheckingVisitor or CodeGeneratingVisitor).
+
+</body>
+</html>
